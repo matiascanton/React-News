@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from'./Form.module.css';
 import useSelect from '../hooks/useSelect';
+import PropTypes from 'prop-types';
 
-const Form = () => {
+const Form = ({setCategory}) => {
 
     const OPTIONS = [
         {value: 'general', label: 'General'},
@@ -13,10 +14,19 @@ const Form = () => {
 
     const [category, SelectNews] = useSelect('general', OPTIONS);
 
+    // Cuando se hace submit, pasamos categoria a APP
+    const searchNews = e => {
+        e.preventDefault();
+
+        setCategory(category);
+    }
+
     return (
         <div className={`${styles.search} row`}>
             <div className="col s12 m8 offset-m2">
-                <form>
+                <form
+                    onSubmit={searchNews}
+                >
                     <h2 className={styles.heading}> Encuentra noticias por categoria </h2>
 
                     <SelectNews/>
@@ -33,5 +43,11 @@ const Form = () => {
         </div>
       );
 }
+
+
+Form.propTypes = {
+    setCategory: PropTypes.func.isRequired
+}
+
  
 export default Form;
