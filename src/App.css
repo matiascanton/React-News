@@ -1,0 +1,13 @@
+img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.card_new {
+  height: 550px;
+}
+.card-content {
+  height: 230px;
+  overflow-y: auto;
+}

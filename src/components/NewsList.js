@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const NewsList = ({news}) => {
     return (  
 
-        <div className="row">
+        <div className="row newsContainer">
             {news.map(nw => (
                 <News
                     key={nw.url}

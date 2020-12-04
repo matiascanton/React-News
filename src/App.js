@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from './components/Form';
 import Header from './components/Header';
 import NewsList from './components/NewsList';
+import './App.css'
 
 
 function App() {
@@ -25,17 +26,10 @@ function App() {
 
   return (
     <>
-      <Header
-        title='Buscador de Noticias'
-        />
-      <div className="container white">
-        <Form
-          setCategory = {setCategory}
-        />
-
-        <NewsList
-          news={news}
-        />
+      <Header title='Noticias' />
+      <div>
+        <Form setCategory={setCategory} />
+        <NewsList news={news} />
       </div>
     </>
   );
